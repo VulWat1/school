@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>School Grades</h2>
+
+    {% if is_teacher %}
+        <!-- Кнопка для добавления новой оценки -->
+        <a href="{% url 'add_grade' %}" class="btn btn-success mb-3">Add Grade</a>
+    {% endif %}
+
+    {% if grades %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Student</th>
+                    <th>Subject</th>
+                    <th>Score</th>
+                    <th>Teacher</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for grade in grades %}
+                <tr>
+                    <td>{{ grade.student }}</td>
+                    <td>{{ grade.subject }}</td>
+                    <td>{{ grade.grade }}</td>
+                    <td>{{ grade.teacher }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No grades found!</p>
+    {% endif %}
+{% endblock %}

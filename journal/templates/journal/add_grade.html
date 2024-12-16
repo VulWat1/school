@@ -1,0 +1,21 @@
+{% extends 'journal/base.html' %}
+
+{% block content %}
+    <h2>Add Grade</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="student">Student</label>
+            <input type="text" id="student" name="student_name" class="form-control" placeholder="Enter student name" required>
+        </div>
+        <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" class="form-control" placeholder="Enter subject" required>
+        </div>
+        <div class="form-group">
+            <label for="score">Score</label>
+            <input type="number" id="score" name="score" class="form-control" min="1" max="12" placeholder="Enter score" required>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,18 @@
+<!-- student_profile.html -->
+<h2>Привет, {{ student.first_name }}!</h2>
+
+<p><strong>Твой класс:</strong> {{ student.student_class.name }}</p>
+
+<p><strong>Средняя оценка:</strong> {{ average_grade }}</p>
+
+<h3>Твои оценки</h3>
+{% for grade in grades %}
+    <div>{{ grade.subject.name }}: {{ grade.grade }} ({{ grade.date }})</div>
+{% empty %}
+    <p>Оценки отсутствуют.</p>
+{% endfor %}
+
+<h3>Рейтинг твоего класса</h3>
+{% for classmate, avg in classmates_with_grades %}
+    <p>{{ classmate.first_name }} {{ classmate.last_name }} - Средняя оценка: {{ avg }}</p>
+{% endfor %}

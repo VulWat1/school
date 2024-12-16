@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <script src="{% static 'main/js/main.js' %}" defer></script>
+</head>
+<body>
+    <!-- Загрузочный экран -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">School Portal</div>
+        <nav>
+            <ul>
+                <a href="{% url 'home' %}"><li>Home</a></li>
+                <a href="{% url 'about' %}"><li>About</a></li>
+                <a href="{% url 'student_profile' %}"><li>Profile</a></li>
+                <a href="{% url 'features' %}"><li>Features</a></li>
+                <a href=""><li>Login</a></li>
+                <a href=""><li>Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    {% block body %}
+    
+    {% endblock body %}
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 School Portal. All Rights Reserved.</p>
+    </footer>
+    
+</body>
+</html>
+

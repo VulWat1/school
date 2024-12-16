@@ -1,0 +1,28 @@
+{% extends 'journal/base.html' %}
+
+{% block content %}
+    <h2>Grades for {{ class.name }}</h2>
+
+    {% if grades %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Student</th>
+                    <th>Subject</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for grade in grades %}
+                <tr>
+                    <td>{{ grade.student.first_name }} {{ grade.student.last_name }}</td>
+                    <td>{{ grade.subject }}</td>
+                    <td>{{ grade.grade }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No grades available for this class!</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Информация об Оценке</title>
+    {% comment %} <link rel="stylesheet" href="{% static 'main/css/pages.css' %}"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'journal/css/journal.css' %}">
+</head>
+<body>
+    <h2>Информация об Оценке</h2>
+    <p><strong>Имя ученика:</strong> {{ grade.student_name }}</p>
+    <p><strong>Предмет:</strong> {{ grade.subject }}</p>
+    <p><strong>Оценка:</strong> {{ grade.score }}</p>
+    <a href="{% url 'journal' %}">Вернуться в журнал</a>
+</body>
+</html>

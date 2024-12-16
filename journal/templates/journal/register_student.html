@@ -1,0 +1,18 @@
+<!-- register_student.html -->
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Регистрация нового ученика</h2>
+
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Зарегистрировать</button>
+    </form>
+{% endblock %}

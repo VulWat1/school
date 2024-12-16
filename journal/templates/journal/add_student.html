@@ -1,0 +1,12 @@
+<!-- templates/journal/add_student.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Добавление нового ученика</h2>
+
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success mt-3">Добавить ученика</button>
+  </form>
+{% endblock %}

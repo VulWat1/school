@@ -1,0 +1,15 @@
+{% extends 'journal/base.html' %}
+
+{% block content %}
+    <h2>List of Students</h2>
+
+    {% if students %}
+        <div class="mt-3">
+            {% for student in students %}
+                <p>{{ student.first_name }} {{ student.last_name }} — Class {{ student.student_class.name }}</p>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No students found!</p>
+    {% endif %}
+{% endblock %}

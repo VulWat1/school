@@ -1,0 +1,49 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Home Page{% endblock title %}
+{% block body %}
+    <!-- Hero Section -->
+    <section id="home">
+        <div class="hero">
+            <h1>Welcome to the Future of Learning</h1>
+            <p>Empower students, teachers, and parents with an all-in-one school management system.</p>
+            <button onclick="scrollToSection('about')">Learn More</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Our platform revolutionizes school communication and learning. With interactive tools for teachers, students, and parents, we make education seamless and engaging.</p>
+        <div class="image-container">
+            <img src="images/school.jpg" alt="School Illustration">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+        <h2>Features</h2>
+        <div class="features-container">
+            <div class="feature">
+                <h3>For Teachers</h3>
+                <p>Manage classes, grade assignments, and communicate with parents efficiently.</p>
+            </div>
+            <div class="feature">
+                <h3>For Students</h3>
+                <p>Access homework, submit assignments, and track progress.</p>
+            </div>
+            <div class="feature">
+                <h3>For Parents</h3>
+                <p>Stay informed about your child’s performance and school events.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call-to-Action Section -->
+    <section id="cta">
+        <h2>Join Us Today!</h2>
+        <p>Experience the power of seamless school management.</p>
+        <a href="Pages/login.html" class="cta-button">Get Started</a>
+    </section>
+
+{% endblock body %}
