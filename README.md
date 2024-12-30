@@ -1,1 +1,1 @@
-# school
+School diary on Python(Django/HTML/CSS/JS)
